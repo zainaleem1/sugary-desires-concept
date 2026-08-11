@@ -3,26 +3,60 @@
    ------------------------------------------------------------
    THIS IS THE ONLY FILE YOU NEED TO EDIT TO FILL THE GALLERY.
 
-   HOW TO ADD A PHOTO
+   HOW TO ADD PHOTOS — the short version
    1. Open  https://www.instagram.com/sugarydesirescakes/
-   2. Save the photo you want.
-   3. Rename it  01.jpg,  02.jpg,  03.jpg ...  and drop it in the
-      "images" folder next to this project.
-   4. Below, find the matching entry and paste the real Instagram
-      caption between the quotes on the "caption:" line.
-   5. Paste the post link (the ...instagram.com/p/XXXX/ address)
-      on the "link:" line.
-   6. Save this file and refresh the page. Done.
+   2. Save the photos you want.
+   3. Rename them  01.jpg,  02.jpg,  03.jpg ...  and drop them in
+      the "images" folder.
+   4. That's it. The gallery finds them on its own — you do NOT
+      have to edit anything below.
 
-   If an image file is missing, that tile automatically falls back
-   to gold line-art so the page NEVER looks broken. You can fill
-   the gallery in one photo at a time.
+   Captions and categories are optional extras. When you have a
+   spare ten minutes, fill them in under PHOTO_META further down
+   and the filters and captions start working properly.
 
-   Set DRAFT to false once you are finished — it hides the
-   "caption needed" reminders on empty tiles.
+   Until any photo exists, the gallery shows gold line-art tiles
+   so the page never looks broken or empty.
+
+   Set DRAFT to false to hide the "caption needed" reminders.
    ============================================================ */
 
 var DRAFT = true;
+
+/* ------------------------------------------------------------
+   AUTO-DISCOVERY
+   Looks for images/01.jpg, 02.jpg, 03.jpg ... and uses whatever
+   it finds. Also accepts .jpeg, .png and .webp. Stops looking
+   after 4 numbers in a row are missing, so numbering gaps are
+   fine but big ones will cut the scan short.
+   ------------------------------------------------------------ */
+var AUTO_PHOTOS = {
+  enabled: true,
+  max: 30,
+  stopAfterMisses: 4,
+  exts: ["jpg", "jpeg", "png", "webp"]
+};
+
+/* ------------------------------------------------------------
+   OPTIONAL per-photo detail, keyed by file number.
+   Anything you leave out just falls back to a sensible default.
+   cat must be one of:
+     wedding · celebration · cakesicle · brownie · gift · mermaid
+   ------------------------------------------------------------ */
+var PHOTO_META = {
+  "01": { cat: "", caption: "", link: "" },
+  "02": { cat: "", caption: "", link: "" },
+  "03": { cat: "", caption: "", link: "" },
+  "04": { cat: "", caption: "", link: "" },
+  "05": { cat: "", caption: "", link: "" },
+  "06": { cat: "", caption: "", link: "" },
+  "07": { cat: "", caption: "", link: "" },
+  "08": { cat: "", caption: "", link: "" },
+  "09": { cat: "", caption: "", link: "" },
+  "10": { cat: "", caption: "", link: "" },
+  "11": { cat: "", caption: "", link: "" },
+  "12": { cat: "", caption: "", link: "" }
+};
 
 /* Valid "cat" values (these drive the filter buttons):
    wedding · celebration · cakesicle · brownie · gift · mermaid

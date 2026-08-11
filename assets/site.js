@@ -136,13 +136,58 @@
   if (mount && typeof GALLERY !== "undefined") {
     var draft = (typeof DRAFT !== "undefined") && DRAFT;
     var limit = parseInt(mount.dataset.limit || "0", 10);
-    var items = limit > 0 ? GALLERY.slice(0, limit) : GALLERY;
+    var items = [];
 
     var style = function (cat) {
       return (typeof CAT_STYLE !== "undefined" && CAT_STYLE[cat]) ||
-             { icon: "i-tier", c1: "rgba(125,43,70,.6)", c2: "rgba(154,118,64,.4)", label: cat || "Cake" };
+             { icon: "i-tier", c1: "rgba(125,43,70,.6)", c2: "rgba(154,118,64,.4)", label: cat || "Sugary Desires" };
     };
 
+    /* --- find images/01.jpg, 02.jpg ... without needing a directory
+           listing (which static hosting will not give us) ------------- */
+    function discover(done) {
+      var cfg = (typeof AUTO_PHOTOS !== "undefined") ? AUTO_PHOTOS : null;
+      if (!cfg || !cfg.enabled) return done([]);
+
+      var found = [], misses = 0, n = 1;
+      var pad = function (x) { return (x < 10 ? "0" : "") + x; };
+
+      function nextNumber() {
+        if (n > cfg.max || misses >= cfg.stopAfterMisses) return done(found);
+        tryExt(0);
+      }
+      function tryExt(ei) {
+        if (ei >= cfg.exts.length) { misses++; n++; return nextNumber(); }
+        var num = pad(n), src = "images/" + num + "." + cfg.exts[ei];
+        var probe = new Image();
+        probe.onload = function () {
+          var meta = (typeof PHOTO_META !== "undefined" && PHOTO_META[num]) || {};
+          found.push({
+            img: src,
+            cat: meta.cat || "",
+            ratio: probe.naturalWidth + "/" + probe.naturalHeight,
+            title: meta.title || "Sugary Desires Cakes",
+            caption: meta.caption || "",
+            link: meta.link || "https://www.instagram.com/sugarydesirescakes/"
+          });
+          misses = 0; n++; nextNumber();
+        };
+        probe.onerror = function () { tryExt(ei + 1); };
+        probe.src = src;
+      }
+      nextNumber();
+    }
+
+    /* real photos if any exist, otherwise the line-art placeholder set */
+    discover(function (photos) {
+      var source = photos.length ? photos : GALLERY;
+      items = limit > 0 ? source.slice(0, limit) : source;
+      mount.dataset.mode = photos.length ? "photos" : "placeholder";
+      renderTiles();
+      wire();
+    });
+
+    function renderTiles() {
     items.forEach(function (it, i) {
       var st = style(it.cat);
       var tile = document.createElement("button");
@@ -205,7 +250,9 @@
     });
 
     if (window.rvScan) window.rvScan(mount);
+    }
 
+    function wire() {
     /* --- filters ------------------------------------------------------- */
     var filters = $("#filters");
     if (filters) {
@@ -227,7 +274,7 @@
       var lbVis = $("#lbVis"), lbTag = $("#lbTag"), lbT = $("#lbT"), lbP = $("#lbP"), lbLink = $("#lbLink");
       var current = 0, opener = null;
 
-      var render = function (i) {
+      var showAt = function (i) {
         var visible = $$(".tile:not(.is-hidden)", mount);
         if (!visible.length) return;
         current = (i + visible.length) % visible.length;
@@ -258,7 +305,7 @@
       var open = function (tile) {
         opener = tile;
         var visible = $$(".tile:not(.is-hidden)", mount);
-        render(visible.indexOf(tile));
+        showAt(visible.indexOf(tile));
         lb.classList.add("on");
         document.body.style.overflow = "hidden";
         $("#lbX").focus();
@@ -274,15 +321,16 @@
         if (t) open(t);
       });
       $("#lbX").addEventListener("click", close);
-      $("#lbPrev").addEventListener("click", function () { render(current - 1); });
-      $("#lbNext").addEventListener("click", function () { render(current + 1); });
+      $("#lbPrev").addEventListener("click", function () { showAt(current - 1); });
+      $("#lbNext").addEventListener("click", function () { showAt(current + 1); });
       lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
       addEventListener("keydown", function (e) {
         if (!lb.classList.contains("on")) return;
         if (e.key === "Escape") close();
-        if (e.key === "ArrowLeft") render(current - 1);
-        if (e.key === "ArrowRight") render(current + 1);
+        if (e.key === "ArrowLeft") showAt(current - 1);
+        if (e.key === "ArrowRight") showAt(current + 1);
       });
+    }
     }
   }
 
