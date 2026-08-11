@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order a Cake — Sugary Desires Cakes</title>
+<meta name="description" content="Six quick questions and we'll come back with a design and a price. Bespoke cakes, cakesicles, brownies and gift packs.">
+<meta name="theme-color" content="#0d0709">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="concept">
+  Independent design concept — an unsolicited study for
+  <a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">@sugarydesirescakes</a>. Not an official site.
+</div>
+
+<header class="hdr">
+  <div class="shell hdr__in">
+    <a class="mark" href="index.html" aria-label="Sugary Desires Cakes — home">
+      <svg class="mark__ico" aria-hidden="true"><use href="#i-tier"/></svg>
+      <span class="mark__tx"><b>Sugary Desires</b><i>Cake Atelier</i></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html#collection">Collection</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="index.html#craft">The Craft</a>
+      <a href="index.html#flavours">Flavours</a>
+      <a href="index.html#venue">Delivery</a>
+    </nav>
+    <a class="btn btn--head" href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">
+      <svg width="15" height="15" aria-hidden="true"><use href="#i-ig"/></svg>DM instead
+    </a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="index.html"            style="--i:0">Home</a>
+  <a href="index.html#collection" style="--i:1">Collection</a>
+  <a href="gallery.html"          style="--i:2">Gallery</a>
+  <a href="index.html#flavours"   style="--i:3">Flavours</a>
+  <a href="index.html#venue"      style="--i:4">Delivery</a>
+  <a href="order.html"            style="--i:5" class="gold">Order a cake</a>
+</nav>
+
+<main>
+
+<section class="phero" style="padding-bottom:clamp(30px,4vw,50px)">
+  <div class="phero__bg" aria-hidden="true">
+    <div class="bloom bloom--1"></div>
+    <div class="bloom bloom--3"></div>
+  </div>
+  <div class="shell">
+    <p class="eyebrow rv">Order</p>
+    <h1 class="display rv" style="--d:.06s;font-size:clamp(40px,8vw,104px)">Tell us what<br>you're imagining.</h1>
+    <p class="lede rv" style="--d:.12s">Six quick questions. Nothing is charged and nothing is
+      confirmed here — we read it, design something, and come back to you with a price.</p>
+  </div>
+</section>
+
+<section style="padding-bottom:clamp(90px,11vw,150px)">
+  <div class="shell order">
+
+    <!-- ---------- progress rail ---------- -->
+    <ol class="rail rv" id="rail">
+      <li class="on"><button type="button" data-go="0"><span class="n">01</span>Occasion</button></li>
+      <li><button type="button" data-go="1"><span class="n">02</span>The cake</button></li>
+      <li><button type="button" data-go="2"><span class="n">03</span>Flavour &amp; finish</button></li>
+      <li><button type="button" data-go="3"><span class="n">04</span>When &amp; where</button></li>
+      <li><button type="button" data-go="4"><span class="n">05</span>Your details</button></li>
+      <li><button type="button" data-go="5"><span class="n">06</span>Review</button></li>
+    </ol>
+
+    <!-- ---------- panes ---------- -->
+    <form id="orderForm" class="rv" style="--d:.08s" novalidate>
+
+      <!-- 01 ---------------------------------------------------------- -->
+      <div class="pane on" data-pane="0">
+        <h2>What's the occasion?</h2>
+        <p class="lede">This changes almost everything about the design, so it's the first thing we ask.</p>
+        <div class="opts" data-single="occasion">
+          <button type="button" class="opt" data-v="Wedding"        aria-pressed="false"><svg><use href="#i-rings"/></svg><b>Wedding</b><span>Tiered, delivered, set up on site.</span></button>
+          <button type="button" class="opt" data-v="Birthday"       aria-pressed="false"><svg><use href="#i-candle"/></svg><b>Birthday</b><span>Themed to the person having it.</span></button>
+          <button type="button" class="opt" data-v="Baby shower"    aria-pressed="false"><svg><use href="#i-baby"/></svg><b>Baby shower</b><span>Soft palettes and matching sweets.</span></button>
+          <button type="button" class="opt" data-v="Anniversary"    aria-pressed="false"><svg><use href="#i-heart"/></svg><b>Anniversary</b><span>Quieter, more grown-up designs.</span></button>
+          <button type="button" class="opt" data-v="Corporate or gifting" aria-pressed="false"><svg><use href="#i-brief"/></svg><b>Corporate</b><span>Branded boxes and trays, by the dozen.</span></button>
+          <button type="button" class="opt" data-v="Something else" aria-pressed="false"><svg><use href="#i-star"/></svg><b>Something else</b><span>Tell us about it in a moment.</span></button>
+        </div>
+        <p class="note" id="err0" style="color:var(--rose);margin-top:16px;display:none">Pick one to continue.</p>
+        <div class="navrow">
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--solid" data-next>Continue<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- 02 ---------------------------------------------------------- -->
+      <div class="pane" data-pane="1">
+        <h2>What are you after?</h2>
+        <p class="lede">Not sure yet is a perfectly good answer — we'll suggest something.</p>
+        <div class="opts" data-single="range">
+          <button type="button" class="opt" data-v="Wedding tiers"     aria-pressed="false"><svg><use href="#i-tier"/></svg><b>Wedding tiers</b><span>Two or more tiers, structurally built.</span></button>
+          <button type="button" class="opt" data-v="Celebration cake"  aria-pressed="false"><svg><use href="#i-candle"/></svg><b>Celebration cake</b><span>Single tier, fully themed.</span></button>
+          <button type="button" class="opt" data-v="Cakesicles"        aria-pressed="false"><svg><use href="#i-cakesicle"/></svg><b>Cakesicles</b><span>By the dozen, hand-finished.</span></button>
+          <button type="button" class="opt" data-v="Brownies"          aria-pressed="false"><svg><use href="#i-brownie"/></svg><b>Brownies</b><span>Trays and boxes.</span></button>
+          <button type="button" class="opt" data-v="Gift pack"         aria-pressed="false"><svg><use href="#i-gift"/></svg><b>Gift pack</b><span>A curated mixed box.</span></button>
+          <button type="button" class="opt" data-v="Not sure yet"      aria-pressed="false"><svg><use href="#i-star"/></svg><b>Not sure yet</b><span>Advise me.</span></button>
+        </div>
+
+        <div class="stack" style="margin-top:34px">
+          <div class="row">
+            <div class="field">
+              <label for="serves">Roughly how many people</label>
+              <input id="serves" name="serves" inputmode="numeric" placeholder="e.g. 40">
+            </div>
+            <div class="field">
+              <label for="tiers">Tiers or quantity <span style="color:var(--cream-22)">— optional</span></label>
+              <input id="tiers" name="tiers" placeholder="e.g. 3 tiers, or 24 cakesicles">
+            </div>
+          </div>
+        </div>
+
+        <p class="note" id="err1" style="color:var(--rose);margin-top:16px;display:none">Pick one to continue.</p>
+        <div class="navrow">
+          <button type="button" class="btn" data-prev><svg width="16" height="16" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--solid" data-next>Continue<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- 03 ---------------------------------------------------------- -->
+      <div class="pane" data-pane="2">
+        <h2>Flavour &amp; finish</h2>
+        <p class="lede">Pick a flavour, then tell us what it should look like. Anything you've
+          seen and loved is the fastest possible brief.</p>
+
+        <div class="stack">
+          <div>
+            <span class="flabel">Flavour</span>
+            <div class="chips" data-single="flavour">
+              <button type="button" class="chip" data-v="Belgian Chocolate" aria-pressed="false">Belgian Chocolate</button>
+              <button type="button" class="chip" data-v="Vanilla Bean"      aria-pressed="false">Vanilla Bean</button>
+              <button type="button" class="chip" data-v="Red Velvet"        aria-pressed="false">Red Velvet</button>
+              <button type="button" class="chip" data-v="Salted Caramel"    aria-pressed="false">Salted Caramel</button>
+              <button type="button" class="chip" data-v="Pistachio &amp; Rose" aria-pressed="false">Pistachio &amp; Rose</button>
+              <button type="button" class="chip" data-v="Lotus Biscoff"     aria-pressed="false">Lotus Biscoff</button>
+              <button type="button" class="chip" data-v="Mango Passion"     aria-pressed="false">Mango Passion</button>
+              <button type="button" class="chip" data-v="Open to suggestions" aria-pressed="false">Open to suggestions</button>
+            </div>
+          </div>
+
+          <div>
+            <span class="flabel">Style <span style="color:var(--cream-22);letter-spacing:normal;text-transform:none">— pick as many as you like</span></span>
+            <div class="chips" data-multi="style">
+              <button type="button" class="chip" data-v="Minimal" aria-pressed="false">Minimal</button>
+              <button type="button" class="chip" data-v="Floral" aria-pressed="false">Floral</button>
+              <button type="button" class="chip" data-v="Metallic / gold" aria-pressed="false">Metallic / gold</button>
+              <button type="button" class="chip" data-v="Pastel" aria-pressed="false">Pastel</button>
+              <button type="button" class="chip" data-v="Bold colour" aria-pressed="false">Bold colour</button>
+              <button type="button" class="chip" data-v="Character / themed" aria-pressed="false">Character / themed</button>
+              <button type="button" class="chip" data-v="Mermaid / iridescent" aria-pressed="false">Mermaid / iridescent</button>
+              <button type="button" class="chip" data-v="Hand-painted" aria-pressed="false">Hand-painted</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="colours">Colours</label>
+            <input id="colours" name="colours" placeholder="e.g. ivory, sage green and a little gold">
+          </div>
+
+          <div class="field">
+            <label for="inspo">Link to something you love <span style="color:var(--cream-22)">— optional</span></label>
+            <input id="inspo" name="inspo" placeholder="Paste an Instagram or Pinterest link">
+          </div>
+
+          <div class="field">
+            <label for="notes">Anything else we should know</label>
+            <textarea id="notes" name="notes" placeholder="Allergies, dietary needs, a message to go on top, the theme of the party — all useful."></textarea>
+          </div>
+        </div>
+
+        <div class="navrow">
+          <button type="button" class="btn" data-prev><svg width="16" height="16" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--solid" data-next>Continue<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- 04 ---------------------------------------------------------- -->
+      <div class="pane" data-pane="3">
+        <h2>When &amp; where</h2>
+        <p class="lede">Bespoke work needs lead time. The earlier you ask, the more we can do.</p>
+
+        <div class="stack">
+          <div class="row">
+            <div class="field">
+              <label for="date">Date needed</label>
+              <input id="date" name="date" type="date">
+              <p class="msg">Please choose a date, or leave it blank if it isn't fixed.</p>
+            </div>
+            <div class="field">
+              <label for="time">Time it's needed by <span style="color:var(--cream-22)">— optional</span></label>
+              <input id="time" name="time" type="time">
+            </div>
+          </div>
+
+          <div>
+            <span class="flabel">How would you like it?</span>
+            <div class="opts" data-single="fulfilment">
+              <button type="button" class="opt" data-v="Cake@Venue delivery" aria-pressed="false"><svg><use href="#i-van"/></svg><b>Cake@Venue</b><span>We bring it, assemble it and place it.</span></button>
+              <button type="button" class="opt" data-v="Collection" aria-pressed="false"><svg><use href="#i-gift"/></svg><b>Collection</b><span>You'll come and pick it up.</span></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="where">Venue or area</label>
+            <input id="where" name="where" placeholder="Where is it going?">
+          </div>
+        </div>
+
+        <div class="navrow">
+          <button type="button" class="btn" data-prev><svg width="16" height="16" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--solid" data-next>Continue<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- 05 ---------------------------------------------------------- -->
+      <div class="pane" data-pane="4">
+        <h2>How do we reach you?</h2>
+        <p class="lede">Your name, plus at least one way to get back to you.</p>
+
+        <div class="stack">
+          <div class="row">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" autocomplete="name" placeholder="Jane Doe">
+              <p class="msg">We need a name to put on the order.</p>
+            </div>
+            <div class="field">
+              <label for="handle">Instagram handle</label>
+              <input id="handle" name="handle" placeholder="@yourhandle">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+              <p class="msg">That doesn't look like a valid email address.</p>
+            </div>
+            <div class="field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+00 000 000 0000">
+            </div>
+          </div>
+          <p class="note" id="err4" style="color:var(--rose);display:none">Please leave at least one of Instagram, email or phone so we can reply.</p>
+        </div>
+
+        <div class="navrow">
+          <button type="button" class="btn" data-prev><svg width="16" height="16" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn--solid" data-next>Review my order<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- 06 ---------------------------------------------------------- -->
+      <div class="pane" data-pane="5">
+        <h2>Here's your order</h2>
+        <p class="lede">Check it over. Everything here is editable — click any step on the left
+          to go back.</p>
+
+        <dl class="summary" id="summary"></dl>
+
+        <div class="msgbox">
+          <p class="note" style="margin-bottom:14px;color:var(--gold)">READY TO SEND</p>
+          <pre id="msgOut"></pre>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <button type="button" class="btn btn--solid" id="sendBtn">Send my order<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button type="button" class="btn" id="copyBtn">Copy message</button>
+            <a class="btn" id="igBtn" href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-ig"/></svg>Open Instagram DM
+            </a>
+            <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener" hidden>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp
+            </a>
+          </div>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="navrow">
+          <button type="button" class="btn" data-prev><svg width="16" height="16" aria-hidden="true"><use href="#i-back"/></svg>Back</button>
+          <span class="spacer"></span>
+          <a class="btn btn--ghost" href="gallery.html">Browse the gallery instead</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <a class="mark" href="index.html">
+          <svg class="mark__ico" aria-hidden="true"><use href="#i-tier"/></svg>
+          <span class="mark__tx"><b>Sugary Desires</b><i>Cake Atelier</i></span>
+        </a>
+        <p class="lede" style="margin-top:20px;max-width:34ch;font-size:15px">
+          You Desire, We Design. Bespoke cakes made to become the highlight of your events.
+        </p>
+      </div>
+      <div>
+        <h4>Collection</h4>
+        <ul>
+          <li><a href="gallery.html#wedding">Wedding tiers</a></li>
+          <li><a href="gallery.html#cakesicle">Cakesicles</a></li>
+          <li><a href="gallery.html#mermaid">Mermaid cakes</a></li>
+          <li><a href="gallery.html#brownie">Brownies</a></li>
+          <li><a href="gallery.html#gift">Gift packs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Orders</h4>
+        <ul>
+          <li><a href="order.html">Order a cake</a></li>
+          <li><a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">Instagram DM</a></li>
+          <li><a href="index.html#venue">Cake@Venue delivery</a></li>
+          <li><a href="index.html#craft">How ordering works</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__word" aria-hidden="true">SUGARY DESIRES</div>
+    <div class="foot__base">
+      <span>Design concept, 2026. Not affiliated with the business.</span>
+      <span>Made for <a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener" class="gold">@sugarydesirescakes</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/icons.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/order.js"></script>
+</body>
+</html>

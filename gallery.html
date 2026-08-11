@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallery — Sugary Desires Cakes</title>
+<meta name="description" content="Wedding tiers, mermaid cakes, cakesicles, brownies and gift packs by Sugary Desires Cakes.">
+<meta name="theme-color" content="#0d0709">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="concept">
+  Independent design concept — an unsolicited study for
+  <a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">@sugarydesirescakes</a>. Not an official site.
+</div>
+
+<header class="hdr">
+  <div class="shell hdr__in">
+    <a class="mark" href="index.html" aria-label="Sugary Desires Cakes — home">
+      <svg class="mark__ico" aria-hidden="true"><use href="#i-tier"/></svg>
+      <span class="mark__tx"><b>Sugary Desires</b><i>Cake Atelier</i></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html#collection">Collection</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
+      <a href="index.html#craft">The Craft</a>
+      <a href="index.html#flavours">Flavours</a>
+      <a href="index.html#venue">Delivery</a>
+    </nav>
+    <a class="btn btn--head" href="order.html">Order a cake<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span></button>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="index.html"          style="--i:0">Home</a>
+  <a href="index.html#collection" style="--i:1">Collection</a>
+  <a href="gallery.html"        style="--i:2">Gallery</a>
+  <a href="index.html#flavours" style="--i:3">Flavours</a>
+  <a href="index.html#venue"    style="--i:4">Delivery</a>
+  <a href="order.html"          style="--i:5" class="gold">Order a cake</a>
+</nav>
+
+<main>
+
+<section class="phero">
+  <div class="phero__bg" aria-hidden="true">
+    <div class="bloom bloom--1"></div>
+    <div class="bloom bloom--2"></div>
+  </div>
+  <div class="shell">
+    <p class="eyebrow rv">The Gallery</p>
+    <h1 class="display rv" style="--d:.06s">Every one of<br>these was<br>somebody's day.</h1>
+    <p class="lede rv" style="--d:.12s">Real cakes, made to order. Filter by what you're
+      looking for, or open any of them to read the story behind it.</p>
+  </div>
+</section>
+
+<section class="band--tight" style="padding-bottom:clamp(90px,11vw,150px)">
+  <div class="shell">
+    <div class="filters rv" id="filters" role="group" aria-label="Filter gallery">
+      <button type="button" data-filter="all"         aria-pressed="true">All</button>
+      <button type="button" data-filter="wedding"     aria-pressed="false">Wedding</button>
+      <button type="button" data-filter="celebration" aria-pressed="false">Celebration</button>
+      <button type="button" data-filter="cakesicle"   aria-pressed="false">Cakesicles</button>
+      <button type="button" data-filter="mermaid"     aria-pressed="false">Mermaid</button>
+      <button type="button" data-filter="brownie"     aria-pressed="false">Brownies</button>
+      <button type="button" data-filter="gift"        aria-pressed="false">Gift packs</button>
+    </div>
+
+    <div class="masonry" id="galleryMount"></div>
+
+    <div class="gal-empty rv" id="galHelp" hidden>
+      <h3>This gallery is waiting for photos</h3>
+      <p class="lede" style="margin:0 auto;text-align:center">
+        Save images from Instagram, name them <code>01.jpg</code> to <code>12.jpg</code>,
+        drop them in the <code>images</code> folder, then paste the real captions into
+        <code>data/gallery.js</code>. Tiles fall back to line-art until then, so nothing looks broken.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="band tone" style="text-align:center">
+  <div class="shell rv">
+    <p class="eyebrow" style="justify-content:center">Seen something you like?</p>
+    <h2 class="display" style="font-size:clamp(36px,6.4vw,86px)">Yours won't look<br>like any of these.</h2>
+    <p class="lede" style="margin:26px auto 0;text-align:center">Every cake is designed from scratch
+      around the occasion. Send us the one you love and we'll take it somewhere else entirely.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px">
+      <a class="btn btn--solid" href="order.html">Order a cake<svg class="arw" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn" href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">
+        <svg width="17" height="17" aria-hidden="true"><use href="#i-ig"/></svg>See the full feed
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__top">
+      <div class="foot__brand">
+        <a class="mark" href="index.html">
+          <svg class="mark__ico" aria-hidden="true"><use href="#i-tier"/></svg>
+          <span class="mark__tx"><b>Sugary Desires</b><i>Cake Atelier</i></span>
+        </a>
+        <p class="lede" style="margin-top:20px;max-width:34ch;font-size:15px">
+          You Desire, We Design. Bespoke cakes made to become the highlight of your events.
+        </p>
+      </div>
+      <div>
+        <h4>Collection</h4>
+        <ul>
+          <li><a href="gallery.html#wedding">Wedding tiers</a></li>
+          <li><a href="gallery.html#cakesicle">Cakesicles</a></li>
+          <li><a href="gallery.html#mermaid">Mermaid cakes</a></li>
+          <li><a href="gallery.html#brownie">Brownies</a></li>
+          <li><a href="gallery.html#gift">Gift packs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Orders</h4>
+        <ul>
+          <li><a href="order.html">Order a cake</a></li>
+          <li><a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">Instagram DM</a></li>
+          <li><a href="index.html#venue">Cake@Venue delivery</a></li>
+          <li><a href="index.html#craft">How ordering works</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__word" aria-hidden="true">SUGARY DESIRES</div>
+    <div class="foot__base">
+      <span>Design concept, 2026. Not affiliated with the business.</span>
+      <span>Made for <a href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener" class="gold">@sugarydesirescakes</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Cake preview">
+  <div class="lb__box">
+    <button class="lb__x" id="lbX" aria-label="Close"><svg width="20" height="20" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Previous"><svg width="18" height="18" aria-hidden="true"><use href="#i-back"/></svg></button>
+    <button class="lb__nav lb__nav--next" id="lbNext" aria-label="Next"><svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <div class="lb__vis" id="lbVis"></div>
+    <div class="lb__side">
+      <span class="tag" id="lbTag"></span>
+      <h3 id="lbT"></h3>
+      <p id="lbP"></p>
+      <a class="btn btn--ghost" id="lbLink" href="https://www.instagram.com/sugarydesirescakes/" target="_blank" rel="noopener">
+        View on Instagram<svg class="arw" width="15" height="15" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="assets/icons.js"></script>
+<script src="data/gallery.js"></script>
+<script src="assets/site.js"></script>
+<script>
+/* deep links: gallery.html#wedding preselects that filter */
+(function () {
+  var hash = location.hash.replace("#", "");
+  if (hash) {
+    var b = document.querySelector('#filters [data-filter="' + hash + '"]');
+    if (b) b.click();
+  }
+  /* show the "add photos" helper only while the gallery has no real images */
+  var help = document.getElementById("galHelp");
+  setTimeout(function () {
+    var imgs = document.querySelectorAll("#galleryMount img");
+    if (help && imgs.length === 0) { help.hidden = false; if (window.rvScan) window.rvScan(document); }
+  }, 700);
+})();
+</script>
+</body>
+</html>
